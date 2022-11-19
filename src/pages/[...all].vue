@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-const { t } = useI18n()
 useTitle('Modele | Not Found')
 </script>
 
 <template>
   <div>
-    {{ t('not-found') }}
+    Not Found
   </div>
 </template>
 
