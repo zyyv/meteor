@@ -8,9 +8,13 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Counter: typeof import('./components/Counter.vue')['default']
+    Cursor: typeof import('./components/Cursor.vue')['default']
+    Game: typeof import('./components/Game.vue')['default']
     HelloWorld: typeof import('./components/Counter.vue')['default']
+    Meteor: typeof import('./components/Meteor.vue')['default']
     Navlink: typeof import('./components/Navlink.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Star: typeof import('./components/Star.vue')['default']
   }
 }

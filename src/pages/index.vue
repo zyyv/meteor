@@ -21,11 +21,12 @@ useTitle('Modele | Home')
           i-akar-icons:moon-fill
         />
       </button>
-      <Navlink
+      <a
         icon-btn
         i-carbon:logo-github
         to="https://github.com/chris-zhu/modele"
       />
     </header>
+    <Game />
   </div>
 </template>

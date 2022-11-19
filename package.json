@@ -1,7 +1,5 @@
 {
-  "name": "vitesse",
-  "version": "1.0.0",
-  "description": "一个麻雀虽小但五脏俱全的Vue3模板。（Vitesse style of myself）",
+  "name": "meteor-game",
   "keywords": [
     "vue3",
     "vue3-template",
