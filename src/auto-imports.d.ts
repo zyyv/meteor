@@ -33,6 +33,7 @@ declare global {
   const inject: typeof import('vue')['inject']
   const isDark: typeof import('./composables/useDark')['isDark']
   const isDefined: typeof import('@vueuse/core')['isDefined']
+  const isNear: typeof import('./composables/useMouseable')['isNear']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -128,8 +129,8 @@ declare global {
   const useCssVar: typeof import('@vueuse/core')['useCssVar']
   const useCssVars: typeof import('vue')['useCssVars']
   const useCurrentElement: typeof import('@vueuse/core')['useCurrentElement']
-  const useCursor: typeof import('./composables/cursor')['useCursor']
-  const useCustomMouse: typeof import('./composables/cursor')['useCustomMouse']
+  const useCursor: typeof import('./composables/useCursorable')['useCursor']
+  const useCustomMouse: typeof import('./composables/useMouseable')['useCustomMouse']
   const useCycleList: typeof import('@vueuse/core')['useCycleList']
   const useDark: typeof import('@vueuse/core')['useDark']
   const useDateFormat: typeof import('@vueuse/core')['useDateFormat']
@@ -142,7 +143,7 @@ declare global {
   const useDevicesList: typeof import('@vueuse/core')['useDevicesList']
   const useDisplayMedia: typeof import('@vueuse/core')['useDisplayMedia']
   const useDocumentVisibility: typeof import('@vueuse/core')['useDocumentVisibility']
-  const useDot: typeof import('./composables/cursor')['useDot']
+  const useDot: typeof import('./composables/useCursorable')['useDot']
   const useDraggable: typeof import('@vueuse/core')['useDraggable']
   const useDropZone: typeof import('@vueuse/core')['useDropZone']
   const useElementBounding: typeof import('@vueuse/core')['useElementBounding']
@@ -306,6 +307,7 @@ declare module 'vue' {
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isDark: UnwrapRef<typeof import('./composables/useDark')['isDark']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
+    readonly isNear: UnwrapRef<typeof import('./composables/useMouseable')['isNear']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
@@ -401,8 +403,8 @@ declare module 'vue' {
     readonly useCssVar: UnwrapRef<typeof import('@vueuse/core')['useCssVar']>
     readonly useCssVars: UnwrapRef<typeof import('vue')['useCssVars']>
     readonly useCurrentElement: UnwrapRef<typeof import('@vueuse/core')['useCurrentElement']>
-    readonly useCursor: UnwrapRef<typeof import('./composables/cursor')['useCursor']>
-    readonly useCustomMouse: UnwrapRef<typeof import('./composables/cursor')['useCustomMouse']>
+    readonly useCursor: UnwrapRef<typeof import('./composables/useCursorable')['useCursor']>
+    readonly useCustomMouse: UnwrapRef<typeof import('./composables/useMouseable')['useCustomMouse']>
     readonly useCycleList: UnwrapRef<typeof import('@vueuse/core')['useCycleList']>
     readonly useDark: UnwrapRef<typeof import('@vueuse/core')['useDark']>
     readonly useDateFormat: UnwrapRef<typeof import('@vueuse/core')['useDateFormat']>
@@ -415,7 +417,7 @@ declare module 'vue' {
     readonly useDevicesList: UnwrapRef<typeof import('@vueuse/core')['useDevicesList']>
     readonly useDisplayMedia: UnwrapRef<typeof import('@vueuse/core')['useDisplayMedia']>
     readonly useDocumentVisibility: UnwrapRef<typeof import('@vueuse/core')['useDocumentVisibility']>
-    readonly useDot: UnwrapRef<typeof import('./composables/cursor')['useDot']>
+    readonly useDot: UnwrapRef<typeof import('./composables/useCursorable')['useDot']>
     readonly useDraggable: UnwrapRef<typeof import('@vueuse/core')['useDraggable']>
     readonly useDropZone: UnwrapRef<typeof import('@vueuse/core')['useDropZone']>
     readonly useElementBounding: UnwrapRef<typeof import('@vueuse/core')['useElementBounding']>

@@ -1,21 +1,6 @@
 import { useStorage } from '@vueuse/core'
 import type { ICursorStyle } from '~/types'
 
-export function useCustomMouse() {
-  const pos = useStorage('dotPos', { x: 0, y: 0 })
-  const x = ref(pos.value.x)
-  const y = ref(pos.value.y)
-
-  const mouseHandler = (event: MouseEvent) => {
-    x.value = event.clientX
-    y.value = event.clientY
-  }
-
-  useEventListener(window, 'mousemove', mouseHandler, { passive: true })
-
-  return { x, y }
-}
-
 function getAngle(diffX: number, diffY: number) {
   return (Math.atan2(diffY, diffX) * 180) / Math.PI
 }

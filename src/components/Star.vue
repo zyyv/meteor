@@ -3,8 +3,10 @@ const { x: mouseX, y: mouseY } = useCustomMouse()
 const pos = reactive(randomPosition())
 
 const isClose = computed(() => {
-  const mouse = { x: mouseX.value - 10, y: mouseY.value - 10 } // 计算中心点之前的半径 所以减 10
-  return isNear(mouse, pos, 25) // 相距的极限距离 - 5
+  return isNear({
+    x: pos.x + 10, // 计算中心点之前的半径 所以加 10
+    y: pos.y + 10,
+  }, 25)
 })
 
 const state = reactive({
@@ -33,10 +35,6 @@ watch(isClose, () => {
   }
 })
 
-function isNear(p1: { x: number, y: number }, p2: { x: number, y: number }, distance: number) {
-  return Math.abs(p1.x - p2.x) < distance && Math.abs(p1.y - p2.y) < distance
-}
-
 function randomPosition() {
   const x = Math.floor(Math.random() * (window.innerWidth - 20))
   const y = Math.floor(Math.random() * (window.innerHeight - 20))
@@ -51,7 +49,7 @@ function randomPosition() {
     <br>
     <span>Pos</span>
     <span>{{ pos.x }}-{{ pos.y }}</span>
-    <div pf :style="style" i-mdi:star-four-points hover-i-mdi:star-four-points-outline />
+    <div pf :style="style" i-mdi:star-four-points hover-i-mdi:star-four-points-outline text-purple />
     <!-- <div i-mdi:star-four-points-outline /> -->
   </div>
 </template>
