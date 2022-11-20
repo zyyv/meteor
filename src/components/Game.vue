@@ -1,13 +1,13 @@
 <script lang='ts' setup>
-
+const mes = ref(10)
 </script>
 
 <template>
   <div>
+    <input v-model="mes" type="number">
     <Cursor />
     <Star />
-    <Meteor v-for="i in 5" :key="i" text-red />
-    <!-- <Meteor v-for="i in 5" :key="i" text-teal /> -->
+    <Meteor v-for="_item in mes" :key="_item" text-red />
   </div>
 </template>
 

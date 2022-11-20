@@ -8,8 +8,8 @@ function getMoveValue() {
   // s = v0 * t + 1/2 * a * t^2 (a = g = 9.8)
   const s = computed(() => v0 * t.value + 0.5 * 9.8 * t.value ** 2)
   return {
-    x: ref(f.value ? s : 0),
-    y: ref(f.value ? 0 : s),
+    x: computed(() => f.value ? s.value : 0),
+    y: computed(() => f.value ? 0 : s.value),
   }
 }
 const { x: moveX, y: moveY } = getMoveValue()
@@ -51,19 +51,32 @@ function randomTopScreen() {
 }
 
 function run() {
-  state.timer = setInterval(() => {
-    t.value += 0.1
+  // state.timer = setInterval(() => {
+  //   t.value += 0.1
+  //   if (isOut.value) {
+  //     if (isCollised.value) {
+  //       // eslint-disable-next-line no-console
+  //       console.log('Boom 💥 Collised ~')
+  //     }
+  //     clearInterval(state.timer)
+  //     state.pos = randomTopScreen()
+  //     t.value = 0
+  //     setTimeout(run, 200)
+  //   }
+  // }, 10)
+
+  useRafFn(() => {
+    t.value += 0.08
     if (isOut.value) {
       if (isCollised.value) {
         // eslint-disable-next-line no-console
         console.log('Boom 💥 Collised ~')
       }
-      clearInterval(state.timer)
+      f.value = Math.random() > 0.5
       state.pos = randomTopScreen()
       t.value = 0
-      setTimeout(run, 200)
     }
-  }, 10)
+  })
 }
 
 onMounted(run)
